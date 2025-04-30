@@ -7,11 +7,11 @@
  */
 function sumValues(num1, num2, add) {
     if (add) {
-        const result = 0;
+        let result = 0; //changed from const to let
 
         result = num1 + num2;
 
-        return result;
+        return result; //could also just return num1 + num2
     }
     else {
         return !add;
@@ -27,9 +27,14 @@ function sumValues(num1, num2, add) {
 function discountPrices(prices, discount) {
     const discounted = []
     const length = prices.length;
-    let discountedPrice = 0
+
+    //handle empty array case:
+    if(length === 0){
+        return false;
+    }
+    //remove declaration of discountedPrice
     for(let i = 0; i < length; i++) {
-        discountedPrice += prices[i] * (1 - discount);
+        let discountedPrice += prices[i] * (1 - discount); //add let do declare discountedPrice inside the loop
         discounted.push(discountedPrice);
     }
 

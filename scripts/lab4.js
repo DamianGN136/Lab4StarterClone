@@ -34,7 +34,7 @@ function discountPrices(prices, discount) {
     }
     //remove declaration of discountedPrice
     for(let i = 0; i < length; i++) {
-        let discountedPrice += prices[i] * (1 - discount); //add let do declare discountedPrice inside the loop
+        let discountedPrice = prices[i] * (1 - discount); //add let do declare discountedPrice inside the loop
         discounted.push(discountedPrice);
     }
 
